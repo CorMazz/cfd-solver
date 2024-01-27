@@ -30,7 +30,7 @@ from tqdm import trange
 ########################################################################################################################
 
 MUSCL_scheme_DOE = True
-mesh_option = 1 # 0, 1, or 2, which tells you which index in the "mesh file paths" to look in
+mesh_option = 0 # 0, 1, or 2, which tells you which index in the "mesh file paths" to look in
 
 ########################################################################################################################
 #%% Define Common Plotting Settings
@@ -59,6 +59,7 @@ mesh_file_paths = ["../grids/g33x25u.dat", "../grids/g65x49u.dat", "../grids/g65
 
 mesh = MeshClass(file_path = mesh_file_paths[mesh_option])
 mesh.preprocess_mesh(plot_metrics = False)
+
 
 ########################################################################################################################
 #%% Helper Functions
@@ -206,7 +207,7 @@ if MUSCL_scheme_DOE:
         
         # Iterate
         iterate(
-            num_plots = , 
+            num_plots = 2, 
             iterations_per_plot = 2000, 
             save_fig = True,
             save_dir = save_dir, 
